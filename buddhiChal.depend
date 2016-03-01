@@ -1,0 +1,79 @@
+# depslib dependency file v1.0
+1454988888 source:/home/scimad/codeblocks/buddhiChal/buddhiChal.cpp
+	<iostream>
+	<GL/gl.h>
+	<GL/glu.h>
+	<GL/glut.h>
+
+1455335422 source:/home/scimad/codeblocks/buddhiChal/main.cpp
+	"gameWindow.h"
+
+1455338025 /home/scimad/codeblocks/buddhiChal/gameElements.h
+	"gameMaths.h"
+
+1454997367 /home/scimad/codeblocks/buddhiChal/mathElements.h
+
+1455013334 source:/home/scimad/codeblocks/buddhiChal/mathElements.cpp
+	"mathElements.h"
+
+1455171161 source:/home/scimad/codeblocks/buddhiChal/gameElements.cpp
+	"gameElements.h"
+
+1455011962 source:/home/scimad/codeblocks/buddhiChal/gameGraphics.cpp
+	"gameGraphics.h"
+
+1455012274 /home/scimad/codeblocks/buddhiChal/gameGraphics.h
+	<GL/gl.h>
+	<GL/glu.h>
+	<GL/glut.h>
+	<iostream>
+
+1455347944 source:/home/scimad/codeblocks/buddhiChal/gameWindow.cpp
+	"gameWindow.h"
+	<iostream>
+
+1455347967 /home/scimad/codeblocks/buddhiChal/gameWindow.h
+	"gameBoard.h"
+	"game.h"
+	"gotti.h"
+
+1455343545 source:/home/scimad/codeblocks/buddhiChal/gameBoard.cpp
+	"gameBoard.h"
+	"gameWindow.h"
+
+1455345850 /home/scimad/codeblocks/buddhiChal/gameBoard.h
+	"gameMaths.h"
+	"gameElements.h"
+	"gotti.h"
+	<GL/gl.h>
+	<GL/glu.h>
+	<GL/glut.h>
+
+1455070490 /home/scimad/codeblocks/buddhiChal/gameSetup.h
+	"gameElements.h"
+
+1455168225 /home/scimad/codeblocks/buddhiChal/gameMaths.h
+
+1455069029 source:/home/scimad/codeblocks/buddhiChal/gameMaths.cpp
+	"gameMaths.h"
+
+1455354306 /home/scimad/codeblocks/buddhiChal/game.h
+	"gotti.h"
+
+1455354232 source:/home/scimad/codeblocks/buddhiChal/game.cpp
+	"game.h"
+	<iostream>
+
+1455170507 source:/home/scimad/codeblocks/buddhiChal/gottiDesign.cpp
+	"gotti.h"
+
+1455353095 /home/scimad/codeblocks/buddhiChal/gotti.h
+	"gameElements.h"
+	"gameBoard.h"
+	<GL/gl.h>
+	<GL/glu.h>
+	<GL/glut.h>
+
+1455350585 source:/home/scimad/codeblocks/buddhiChal/gottiSet.cpp
+	"gotti.h"
+
