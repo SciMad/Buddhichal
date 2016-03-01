@@ -1,4 +1,4 @@
-#include "gotti.h"
+#include "../header/gotti.h"
 
 float gottiSet::pieceBorderWidth = 1.0;
 piece gottiSet::BW[33];

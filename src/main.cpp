@@ -1,4 +1,4 @@
-#include "gameWindow.h"
+#include "../header/gameWindow.h"
 
 int main(int argc, char** argv){
 

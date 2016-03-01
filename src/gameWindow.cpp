@@ -1,4 +1,4 @@
-#include "gameWindow.h"
+#include "../header/gameWindow.h"
 #include <iostream>
 
 float myGLwindow::windowHeight = 722;

@@ -1,4 +1,4 @@
-#include "game.h"
+#include "../header/game.h"
 #include <iostream>
 
 gameMode game::currentGameMode;

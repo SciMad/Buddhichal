@@ -77,3 +77,52 @@
 1455350585 source:/home/scimad/codeblocks/buddhiChal/gottiSet.cpp
 	"gotti.h"
 
+1456814811 source:/media/scimad/HDD/mm/3rdSemester/C++/project/buddhiChal/src/game.cpp
+	"../header/game.h"
+	<iostream>
+
+1455596638 /media/scimad/HDD/mm/3rdSemester/C++/project/buddhiChal/header/game.h
+	"gotti.h"
+
+1455596638 /media/scimad/HDD/mm/3rdSemester/C++/project/buddhiChal/header/gotti.h
+	"gameElements.h"
+	"gameBoard.h"
+	<GL/gl.h>
+	<GL/glu.h>
+	<GL/glut.h>
+
+1455596638 /media/scimad/HDD/mm/3rdSemester/C++/project/buddhiChal/header/gameElements.h
+	"gameMaths.h"
+
+1455596638 /media/scimad/HDD/mm/3rdSemester/C++/project/buddhiChal/header/gameMaths.h
+
+1455596640 /media/scimad/HDD/mm/3rdSemester/C++/project/buddhiChal/header/gameBoard.h
+	"gameMaths.h"
+	"gameElements.h"
+	"gotti.h"
+	<GL/gl.h>
+	<GL/glu.h>
+	<GL/glut.h>
+
+1456814845 source:/media/scimad/HDD/mm/3rdSemester/C++/project/buddhiChal/src/gameBoard.cpp
+	"../header/gameBoard.h"
+	"../header/gameWindow.h"
+
+1455596638 /media/scimad/HDD/mm/3rdSemester/C++/project/buddhiChal/header/gameWindow.h
+	"gameBoard.h"
+	"game.h"
+	"gotti.h"
+
+1456814850 source:/media/scimad/HDD/mm/3rdSemester/C++/project/buddhiChal/src/gameElements.cpp
+	"../header/gameElements.h"
+
+1456814854 source:/media/scimad/HDD/mm/3rdSemester/C++/project/buddhiChal/src/gameMaths.cpp
+	"../header/gameMaths.h"
+
+1456814860 source:/media/scimad/HDD/mm/3rdSemester/C++/project/buddhiChal/src/gameWindow.cpp
+	"../header/gameWindow.h"
+	<iostream>
+
+1456814865 source:/media/scimad/HDD/mm/3rdSemester/C++/project/buddhiChal/src/gottiSet.cpp
+	"../header/gotti.h"
+
