@@ -1,0 +1,7 @@
+*.o
+*/*/*.o
+*/*.layout
+bin/*
+obj/*
+*.depend
+*~
