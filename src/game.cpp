@@ -55,6 +55,7 @@ moveType game::whatIsThisMove(){
     }
     return tempThisMove;
 }
+
 int game::whoIsAt(int sx, int sy){
     int i;
     for (i=0; i<32; i++){

@@ -3,11 +3,14 @@
 	<FileVersion major="1" minor="6" />
 	<Project>
 		<Option title="BuddhiChal" />
+		<Option makefile_is_custom="1" />
+		<Option execution_dir="C:/Users/prakash.gautam/Dropbox/Programming/Projects/BuddhiChal/cbx" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/BuddhiChal" prefix_auto="1" extension_auto="1" />
+				<Option output="../bin/Debug/BuddhiChal" prefix_auto="1" extension_auto="1" />
+				<Option working_dir=".." />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -16,7 +19,8 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/BuddhiChal" prefix_auto="1" extension_auto="1" />
+				<Option output="../bin/Release/BuddhiChal" prefix_auto="1" extension_auto="1" />
+				<Option working_dir=".." />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -31,19 +35,19 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="game.cpp" />
-		<Unit filename="game.h" />
-		<Unit filename="gameBoard.cpp" />
-		<Unit filename="gameBoard.h" />
-		<Unit filename="gameElements.cpp" />
-		<Unit filename="gameElements.h" />
-		<Unit filename="gameMaths.cpp" />
-		<Unit filename="gameMaths.h" />
-		<Unit filename="gameWindow.cpp" />
-		<Unit filename="gameWindow.h" />
-		<Unit filename="gotti.h" />
-		<Unit filename="gottiSet.cpp" />
-		<Unit filename="main.cpp" />
+		<Unit filename="../include/game.h" />
+		<Unit filename="../include/gameBoard.h" />
+		<Unit filename="../include/gameElements.h" />
+		<Unit filename="../include/gameMaths.h" />
+		<Unit filename="../include/gameWindow.h" />
+		<Unit filename="../include/gotti.h" />
+		<Unit filename="../src/game.cpp" />
+		<Unit filename="../src/gameBoard.cpp" />
+		<Unit filename="../src/gameElements.cpp" />
+		<Unit filename="../src/gameMaths.cpp" />
+		<Unit filename="../src/gameWindow.cpp" />
+		<Unit filename="../src/gottiSet.cpp" />
+		<Unit filename="../src/main.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
