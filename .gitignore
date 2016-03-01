@@ -1,8 +1,7 @@
-*.o
-*/*/*.o
-*/*.layout
-bin/*
-obj/*
-*.depend
+\!**/*.cbp
+bin/
+**/*.o
+obj/
+cbx/
 *~
 doc/
