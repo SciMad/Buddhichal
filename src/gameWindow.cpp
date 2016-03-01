@@ -54,9 +54,11 @@ void myGLwindow::showWindow(){
 	glutMotionFunc(handleMouse);                        //glutMotionFunction
 
 };
+
 void myGLwindow::loopWindow(){
     glutMainLoop();
 };
+
 void myGLwindow::reshapeWindow(int w, int h){
     windowWidth = w; windowHeight = h;
 	glViewport(0,0, (GLsizei) w, (GLsizei) h);
