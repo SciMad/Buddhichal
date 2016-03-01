@@ -1,4 +1,4 @@
-#include "../header/gameElements.h"
+#include "gameElements.h"
 
 float piece::pieceBorderWidth = 1.0;
 piece::piece(){				        //Constructor Declaration
