@@ -1,6 +1,8 @@
 #ifndef GAMEGRAPHICS_H_INCLUDED
 #define GAMEGRAPHICS_H_INCLUDED
 
+#include<string>
+
 #include "Board.h"
 #include "Game.h"
 #include "Gotti.h"
@@ -26,10 +28,10 @@ public:
     static void handleMouse(int, int, int, int);        //int button, int state, int x, int y
 
     float initx, inity;
-    char* windowTitle;
+    std::string windowTitle;
     myGLwindow();
-    myGLwindow(float, float, char[]);
-    myGLwindow(float, float, float, float, char[]);
+    myGLwindow(float, float, std::string Title);
+    myGLwindow(float, float, float, float,std::string Title); 
 
     void initWindowGraphics();
     void showWindow();

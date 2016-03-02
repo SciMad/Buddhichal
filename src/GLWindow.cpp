@@ -1,26 +1,27 @@
-#include "GLWindow.h"
 #include <iostream>
 
+#include "GLWindow.h"
 float myGLwindow::windowHeight = 722;
 float myGLwindow::windowWidth = 722;
 int myGLwindow::mouseX, myGLwindow::mouseY, myGLwindow::mouseState, myGLwindow::mouseButton;
 mouseEventPosition myGLwindow::mouseWhere = outBoard;
 
 //game* myGLwindow::activeGame = new game(7,vsHuman);
+//
 chessBoard* myGLwindow::activeBoard;
 
-myGLwindow::myGLwindow(float sx, float sy, float w, float h, char title[]){
+myGLwindow::myGLwindow(float sx, float sy, float w, float h, std::string Title){
     this->initx = sx;
     this->inity = sy;
     windowHeight = w;
     windowWidth = h;
-    this->windowTitle = title;
+    t his->windowTitle = Title;
 }
-myGLwindow::myGLwindow(float w, float h, char title[]){
-    myGLwindow(0,0,w,h,title);
+myGLwindow::myGLwindow(float w, float h, std::string Title){
+    myGLwindow(0,0,w,h,Title);
 }
 myGLwindow::myGLwindow(){
-    myGLwindow(722,722,"Welcome SciMad!");
+    myGLwindow(722,722,std::string("Welcome SciMad!"));
 }
 
 void myGLwindow::initWindowGraphics(){
