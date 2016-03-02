@@ -1,12 +1,13 @@
 #ifndef GOTTI_H_INCLUDED
 #define GOTTI_H_INCLUDED
 
-#include "Elements.h"
-#include "Board.h"
-
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <GL/glut.h>
+
+
+#include "Base/Elements.h"
+#include "Base/Board.h"
 
 const float pieceVertices[7][100][2] =	{	// For 7 pieces
                                         {//For Rook

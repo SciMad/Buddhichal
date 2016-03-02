@@ -1,5 +1,5 @@
-#include "Board.h"
-#include "GLWindow.h"
+#include "Base/Board.h"
+#include "OGL/GLWindow.h"
 float chessBoard::borderLineWidth=5.0, chessBoard::boardLineWidth=3.0, chessBoard::gap=80, chessBoard::xMargin=20, chessBoard::xPadding=6, chessBoard::yMargin=20, chessBoard::yPadding=6;
 float chessBoard::boardVector[592];
 float chessBoard::shiftX, chessBoard::shiftY;

@@ -1,4 +1,4 @@
-#include "Maths.h"
+#include "Utility/Maths.h"
 
 int pos(int x, int y){
 	if (x>=0 && x<=7 && y<=7 && y>=0)   return (y*8+x);	else return 99;

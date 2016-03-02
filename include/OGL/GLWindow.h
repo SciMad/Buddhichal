@@ -3,13 +3,13 @@
 
 #include<string>
 
-#include "Board.h"
-#include "Game.h"
-#include "Gotti.h"
+#include "Base/Board.h"
+#include "Base/Game.h"
+#include "Base/Gotti.h"
 
 enum mouseEventPosition {inBoard, outBoard};
 
-class myGLwindow{
+class GLWindow{
     int argc;
     char** argv;
 
@@ -29,9 +29,9 @@ public:
 
     float initx, inity;
     std::string windowTitle;
-    myGLwindow();
-    myGLwindow(float, float, std::string Title);
-    myGLwindow(float, float, float, float,std::string Title); 
+    GLWindow();
+    GLWindow(float, float, std::string Title);
+    GLWindow(float, float, float, float,std::string Title); 
 
     void initWindowGraphics();
     void showWindow();

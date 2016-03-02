@@ -1,6 +1,6 @@
 INCDIR   = include
 SRCDIR   = src
-SRCDIRS  =  
+SRCDIRS  =  Base OGL Utility
 OBJDIR   = obj
 BINDIR   = bin
 LIBDIR   = lib

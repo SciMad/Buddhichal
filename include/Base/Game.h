@@ -1,4 +1,4 @@
-#include "Gotti.h"
+#include "Base/Gotti.h"
 
 enum gameState {notStarted=0, running, paused, over};
 enum situation {sourceNotSelected=0, sourceSelected, destinationSelected, moveRequested};

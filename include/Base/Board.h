@@ -1,13 +1,14 @@
 #ifndef GAMEBOARD_H_INCLUDED
 #define GAMEBOARD_H_INCLUDED
 
-#include "Maths.h"
-#include "Elements.h"
-#include "Gotti.h"
-
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <GL/glut.h>
+
+
+#include "Utility/Maths.h"
+#include "Base/Elements.h"
+#include "Base/Gotti.h"
 
 const float boardColor[5][4] = {  {0.4,0.4,0.3, 0.3},
                             //{0.4, 0.4, 0.3, 0.5},

@@ -1,30 +1,31 @@
 #include <iostream>
 
-#include "GLWindow.h"
-float myGLwindow::windowHeight = 722;
-float myGLwindow::windowWidth = 722;
-int myGLwindow::mouseX, myGLwindow::mouseY, myGLwindow::mouseState, myGLwindow::mouseButton;
-mouseEventPosition myGLwindow::mouseWhere = outBoard;
+#include "OGL/GLWindow.h"
 
-//game* myGLwindow::activeGame = new game(7,vsHuman);
+float GLWindow::windowHeight = 722;
+float GLWindow::windowWidth = 722;
+int GLWindow::mouseX, GLWindow::mouseY, GLWindow::mouseState, GLWindow::mouseButton;
+mouseEventPosition GLWindow::mouseWhere = outBoard;
+
+//game* GLWindow::activeGame = new game(7,vsHuman);
 //
-chessBoard* myGLwindow::activeBoard;
+chessBoard* GLWindow::activeBoard;
 
-myGLwindow::myGLwindow(float sx, float sy, float w, float h, std::string Title){
+GLWindow::GLWindow(float sx, float sy, float w, float h, std::string Title){
     this->initx = sx;
     this->inity = sy;
     windowHeight = w;
     windowWidth = h;
-    t his->windowTitle = Title;
+    this->windowTitle = Title;
 }
-myGLwindow::myGLwindow(float w, float h, std::string Title){
-    myGLwindow(0,0,w,h,Title);
+GLWindow::GLWindow(float w, float h, std::string Title){
+    GLWindow(0,0,w,h,Title);
 }
-myGLwindow::myGLwindow(){
-    myGLwindow(722,722,std::string("Welcome SciMad!"));
+GLWindow::GLWindow(){
+    GLWindow(722,722,std::string("Welcome SciMad!"));
 }
 
-void myGLwindow::initWindowGraphics(){
+void GLWindow::initWindowGraphics(){
     this->initx = 0;                                    //Ahile ekchhin ko lagi 0,0 bata start garau na;
     this->inity = 0;
 
@@ -35,7 +36,7 @@ void myGLwindow::initWindowGraphics(){
 
 }
 
-void myGLwindow::showWindow(){
+void GLWindow::showWindow(){
 
     glutCreateWindow("buddhiChal v1.7");                //glutCreateWindow(this->windowTitle);  //Sets the title on the title bar, but this line of code is not working right now.
     glClearColor(0.1, 0.1, 0.2, 0.5);                   //clear the color by black
@@ -56,27 +57,27 @@ void myGLwindow::showWindow(){
 
 };
 
-void myGLwindow::loopWindow(){
+void GLWindow::loopWindow(){
     glutMainLoop();
 };
 
-void myGLwindow::reshapeWindow(int w, int h){
+void GLWindow::reshapeWindow(int w, int h){
     windowWidth = w; windowHeight = h;
 	glViewport(0,0, (GLsizei) w, (GLsizei) h);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
     gluOrtho2D(0,(GLdouble) w, 0, (GLdouble) h);    //gluOrtho2D(-(GLdouble) w/2,(GLdouble) w/2, -(GLdouble) h/2,(GLdouble) h/2);
 }
-void myGLwindow::handleMouse(int x, int y){
+void GLWindow::handleMouse(int x, int y){
     mouseX = x; mouseY =  windowHeight - y;
     respondMusa(motionFunction);
 }
-void myGLwindow::handleMouse(int button, int state, int x, int y){
+void GLWindow::handleMouse(int button, int state, int x, int y){
 	mouseX = x; 			mouseY =  windowHeight - y;
 	mouseState = state;		mouseButton = button;
 	respondMusa(mouseFunction);
 }
-void myGLwindow::renderGraphics(void){
+void GLWindow::renderGraphics(void){
 	glClear(GL_COLOR_BUFFER_BIT);
 
     activeBoard->showBoard();
@@ -94,7 +95,7 @@ void myGLwindow::renderGraphics(void){
 }
 
 
-void myGLwindow::respondMusa(int whoCalledMe){
+void GLWindow::respondMusa(int whoCalledMe){
         mouseWhere = outBoard;
 
 		if (mouseX>chessBoard::xMargin+chessBoard::xPadding && mouseX<chessBoard::xMargin+chessBoard::xPadding+8*chessBoard::gap && mouseY>chessBoard::yMargin+chessBoard::yPadding && mouseY<chessBoard::yMargin+chessBoard::yPadding+8*chessBoard::gap){		//Apply this conditions when mouseX and mouseY are within the limit of board x, y
@@ -191,11 +192,11 @@ void myGLwindow::respondMusa(int whoCalledMe){
 		}	// mouseButton == GLUT_LEFT_BUTTON
         glutPostRedisplay();
 }
-int myGLwindow::xMouse(int mX){
+int GLWindow::xMouse(int mX){
 	//For 1 based system i.e. first square taken to be 1,1
 	return (mX - (activeBoard->xMargin + activeBoard->xPadding))/activeBoard->gap;//+1;
 }
-int myGLwindow::yMouse(int mY){
+int GLWindow::yMouse(int mY){
 	//For 1 based system i.e. first square taken to be 1,1
 	return (mY - (activeBoard->yMargin + activeBoard->yPadding))/activeBoard->gap;//+1;
 }
