@@ -17,7 +17,6 @@
 //*)
 
 #include "OGL/GLWindow.h"
-#include "wxGUI/GLPanel.h"
 #include "wxGUI/ChessCanvas.h"
 
 class MainFrame: public wxFrame 
@@ -29,6 +28,7 @@ class MainFrame: public wxFrame
 
     private:
 
+        void Initialize();
         //(*Handlers(MainFrame)
         void OnQuit(wxCommandEvent& event);
         void OnAbout(wxCommandEvent& event);
@@ -44,7 +44,7 @@ class MainFrame: public wxFrame
         wxStatusBar* StatusBar1;
         //*)
         //
-        ChessCanvs* ChessBoardArea;
+        ChessCanvas* ChessBoardArea;
 
         DECLARE_EVENT_TABLE()
 };

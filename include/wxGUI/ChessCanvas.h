@@ -10,6 +10,8 @@ class ChessCanvas : public wxGLCanvas
 	public:
        	ChessCanvas(wxWindow*);
         virtual ~ChessCanvas();
+
+        void Initialize();
 	protected:
         DECLARE_EVENT_TABLE()
 	private:

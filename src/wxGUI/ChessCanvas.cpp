@@ -1,7 +1,7 @@
 #include <GL/glut.h>
 
 
-#include "wxGUI/GLPanel.h"
+#include "wxGUI/ChessCanvas.h"
 
 BEGIN_EVENT_TABLE(ChessCanvas,wxGLCanvas)
 
@@ -20,6 +20,14 @@ ChessCanvas::~ChessCanvas()
 {
 	//dtor
 }
+
+void ChessCanvas::Initialize()
+{
+	SetCurrent(*MyContext);
+	//LoadAllImages();
+	//ShuffleCards();
+}
+
 
 void ChessCanvas::OnPaint(wxPaintEvent& WXUNUSED(event))
 {

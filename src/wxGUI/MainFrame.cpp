@@ -64,8 +64,8 @@ MainFrame::MainFrame(wxWindow* parent,wxWindowID id)
     //*)
     
     GLSBSizer = new wxStaticBoxSizer(wxHORIZONTAL, this, _("Move Cards"));
-    ChessBoardArea = new DisplayCanvas(this);
-    KittySBSizer->Add(ChessBoardArea,1, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL,5);
+    ChessBoardArea = new ChessCanvas(this);
+    GLSBSizer->Add(ChessBoardArea,1, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL,5);
     ChessBoardArea->Initialize();
 
 }
