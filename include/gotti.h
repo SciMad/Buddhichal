@@ -1,8 +1,8 @@
 #ifndef GOTTI_H_INCLUDED
 #define GOTTI_H_INCLUDED
 
-#include "gameElements.h"
-#include "gameBoard.h"
+#include "Elements.h"
+#include "Board.h"
 
 #include <GL/gl.h>
 #include <GL/glu.h>

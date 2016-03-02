@@ -1,7 +1,7 @@
 #ifndef GAMEELEMENTS_H_INCLUDED
 #define GAMEELEMENTS_H_INCLUDED
 
-#include "gameMaths.h"
+#include "Maths.h"
 
 enum moveType {illegalMove=6, legalMove, capture, enPassant, castling, promotion};
 

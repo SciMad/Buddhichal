@@ -1,4 +1,4 @@
-#include "gameWindow.h"
+#include "GLWindow.h"
 
 int main(int argc, char** argv){
 

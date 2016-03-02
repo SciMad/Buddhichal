@@ -1,9 +1,9 @@
 #ifndef GAMEBOARD_H_INCLUDED
 #define GAMEBOARD_H_INCLUDED
 
-#include "gameMaths.h"
-#include "gameElements.h"
-#include "gotti.h"
+#include "Maths.h"
+#include "Elements.h"
+#include "Gotti.h"
 
 #include <GL/gl.h>
 #include <GL/glu.h>

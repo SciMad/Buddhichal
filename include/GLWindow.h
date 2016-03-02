@@ -1,9 +1,9 @@
 #ifndef GAMEGRAPHICS_H_INCLUDED
 #define GAMEGRAPHICS_H_INCLUDED
 
-#include "gameBoard.h"
-#include "game.h"
-#include "gotti.h"
+#include "Board.h"
+#include "Game.h"
+#include "Gotti.h"
 
 enum mouseEventPosition {inBoard, outBoard};
 
