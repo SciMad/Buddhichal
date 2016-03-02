@@ -15,6 +15,7 @@
 #include <wx/statusbr.h>
 #include <wx/frame.h>
 //*)
+#include <wx/panel.h>
 
 #include "OGL/GLWindow.h"
 #include "wxGUI/ChessCanvas.h"
@@ -39,11 +40,13 @@ class MainFrame: public wxFrame
         static const long idMenuAbout;
         static const long ID_STATUSBAR1;
         //*)
+        static const long ID_ChessPanel;
 
         //(*Declarations(MainFrame)
         wxStatusBar* StatusBar1;
         //*)
-        //
+        
+        wxPanel* ChessPanel;
         ChessCanvas* ChessBoardArea;
 
         DECLARE_EVENT_TABLE()

@@ -23,6 +23,7 @@ const long MainFrame::idMenuQuit = wxNewId();
 const long MainFrame::idMenuAbout = wxNewId();
 const long MainFrame::ID_STATUSBAR1 = wxNewId();
 //*)
+const long MainFrame::ID_ChessPanel= wxNewId();
 
 BEGIN_EVENT_TABLE(MainFrame,wxFrame)
     //(*EventTable(MainFrame)
@@ -41,7 +42,8 @@ MainFrame::MainFrame(wxWindow* parent,wxWindowID id)
     wxMenuBar* MenuBar1;
     wxMenu* Menu2;
 
-    Create(parent, id, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("id"));
+    Create(parent, id, _("We are making chess here baby"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("id"));
+    ChessPanel = new wxPanel(this,ID_ChessPanel,wxDefaultPosition,wxDefaultSize,wxTAB_TRAVERSAL,_T("ID_ChessPanel"));
     MenuBar1 = new wxMenuBar();
     Menu1 = new wxMenu();
     MenuItem1 = new wxMenuItem(Menu1, idMenuQuit, _("Quit\tAlt-F4"), _("Quit the application"), wxITEM_NORMAL);
@@ -63,8 +65,8 @@ MainFrame::MainFrame(wxWindow* parent,wxWindowID id)
     Connect(idMenuAbout,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&MainFrame::OnAbout);
     //*)
     
-    GLSBSizer = new wxStaticBoxSizer(wxHORIZONTAL, this, _("Move Cards"));
-    ChessBoardArea = new ChessCanvas(this);
+    GLSBSizer = new wxStaticBoxSizer(wxHORIZONTAL, ChessPanel, _("Move Cards"));
+    ChessBoardArea = new ChessCanvas(ChessPanel);
     GLSBSizer->Add(ChessBoardArea,1, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL,5);
     ChessBoardArea->Initialize();
 

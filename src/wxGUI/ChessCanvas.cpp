@@ -39,7 +39,7 @@ void ChessCanvas::OnPaint(wxPaintEvent& WXUNUSED(event))
 	}
     glClearColor(0.0f,0.5f,0.4f,0);
     glClear(GL_COLOR_BUFFER_BIT);
-    //DrawTriangle();
+    DrawTriangle();
     Render();
     glFlush();
     SwapBuffers();
