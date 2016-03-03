@@ -10,7 +10,6 @@
 #include <wx/msgdlg.h>
 
 #include "wxGUI/MainFrame.h"
-#include "OGL/GLWindow.h"
 
 //(*InternalHeaders(MainFrame)
 #include <wx/string.h>
@@ -42,15 +41,21 @@ MainFrame::MainFrame(wxWindow* parent,wxWindowID id)
     wxMenuBar* MenuBar1;
     wxMenu* Menu2;
 
-    Create(parent, id, _("We are making chess here baby"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("id"));
-    ChessPanel = new wxPanel(this,ID_ChessPanel,wxDefaultPosition,wxDefaultSize,wxTAB_TRAVERSAL,_T("ID_ChessPanel"));
+    Create(parent, id, _("We are making chess here baby"),
+            wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("id"));
+
+    ChessPanel = new wxPanel(this,ID_ChessPanel,wxDefaultPosition,wxDefaultSize,
+            wxTAB_TRAVERSAL,_T("ID_ChessPanel"));
+    
     MenuBar1 = new wxMenuBar();
     Menu1 = new wxMenu();
-    MenuItem1 = new wxMenuItem(Menu1, idMenuQuit, _("Quit\tAlt-F4"), _("Quit the application"), wxITEM_NORMAL);
+    MenuItem1 = new wxMenuItem(Menu1, idMenuQuit, _("Quit\tAlt-F4"),
+            _("Quit the application"), wxITEM_NORMAL);
     Menu1->Append(MenuItem1);
     MenuBar1->Append(Menu1, _("&File"));
     Menu2 = new wxMenu();
-    MenuItem2 = new wxMenuItem(Menu2, idMenuAbout, _("About\tF1"), _("Show info about this application"), wxITEM_NORMAL);
+    MenuItem2 = new wxMenuItem(Menu2, idMenuAbout, _("About\tF1"),
+            _("Show info about this application"), wxITEM_NORMAL);
     Menu2->Append(MenuItem2);
     MenuBar1->Append(Menu2, _("Help"));
     SetMenuBar(MenuBar1);

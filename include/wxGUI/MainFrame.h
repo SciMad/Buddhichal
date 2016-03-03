@@ -17,7 +17,6 @@
 //*)
 #include <wx/panel.h>
 
-#include "OGL/GLWindow.h"
 #include "wxGUI/ChessCanvas.h"
 
 class MainFrame: public wxFrame 

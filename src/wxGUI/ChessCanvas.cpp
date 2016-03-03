@@ -18,7 +18,7 @@ ChessCanvas::ChessCanvas(wxWindow*Parent):
 
 ChessCanvas::~ChessCanvas()
 {
-	//dtor
+    delete MyContext;
 }
 
 void ChessCanvas::Initialize()
@@ -93,12 +93,8 @@ void ChessCanvas::DrawTriangle()
     glPopMatrix();
 }
 
-
-
-
 void ChessCanvas::Render()
 {
-
     DrawTriangle();
 }
 
@@ -117,12 +113,8 @@ void ChessCanvas::ChangeSize(int w, int h)
     gluPerspective(45.0, (double)w / (double)h, 0.2, 200.0);
 }
 
-
 void ChessCanvas::TimerFunc(int value)
 {
     glutPostRedisplay();
     //glutTimerFunc(10, TimerFunc, 0);
 }
-
-
-
