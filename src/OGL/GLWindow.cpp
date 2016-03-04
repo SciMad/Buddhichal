@@ -1,5 +1,4 @@
 #include <iostream>
-
 #include "OGL/GLWindow.h"
 
 float GLWindow::windowHeight = 722;
@@ -21,7 +20,9 @@ GLWindow::GLWindow(float sx, float sy, float w, float h, std::string Title){
 GLWindow::GLWindow(float w, float h, std::string Title){
     GLWindow(0,0,w,h,Title);
 }
-GLWindow::GLWindow(){
+
+GLWindow::GLWindow()
+{
     GLWindow(722,722,std::string("Welcome SciMad!"));
 }
 
@@ -33,16 +34,13 @@ void GLWindow::initWindowGraphics(){
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGBA);       //Display mode.... don't know much, but could be used for back buffering and stuffs
     glutInitWindowPosition(this->initx, this->inity);   //Size of the window
 	glutInitWindowSize(windowWidth, windowHeight);      //Starts the window from ...
-
 }
 
-void GLWindow::showWindow(){
-
+void GLWindow::showWindow()
+{
     glutCreateWindow("buddhiChal v1.7");                //glutCreateWindow(this->windowTitle);  //Sets the title on the title bar, but this line of code is not working right now.
     glClearColor(0.1, 0.1, 0.2, 0.5);                   //clear the color by black
     glShadeModel(GL_FLAT);                              //
-
-
 
     activeBoard->initBoardVertex();
     activeGame->allGotti->initPieces();
@@ -50,10 +48,10 @@ void GLWindow::showWindow(){
     //allGotti->initPieces();
 
     //Rendering the Pieces will be done in renderGraphics
-    glutDisplayFunc(renderGraphics);
-    glutReshapeFunc(reshapeWindow);                     //
-    glutMouseFunc(handleMouse);                         //glutMouseFunction
-	glutMotionFunc(handleMouse);                        //glutMotionFunction
+    glutDisplayFunc(OnPaint);
+    glutReshapeFunc(OnReshape);                     //
+    glutMouseFunc(OnMouseClick);                         //glutMouseFunction
+	glutMotionFunc(OnMouseMotion);                        //glutMotionFunction
 
 };
 
@@ -61,35 +59,33 @@ void GLWindow::loopWindow(){
     glutMainLoop();
 };
 
-void GLWindow::reshapeWindow(int w, int h){
+void GLWindow::OnReshape(int w, int h){
     windowWidth = w; windowHeight = h;
 	glViewport(0,0, (GLsizei) w, (GLsizei) h);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
     gluOrtho2D(0,(GLdouble) w, 0, (GLdouble) h);    //gluOrtho2D(-(GLdouble) w/2,(GLdouble) w/2, -(GLdouble) h/2,(GLdouble) h/2);
 }
-void GLWindow::handleMouse(int x, int y){
+void GLWindow::OnMouseClick(int x, int y){
     mouseX = x; mouseY =  windowHeight - y;
     respondMusa(motionFunction);
 }
-void GLWindow::handleMouse(int button, int state, int x, int y){
+void GLWindow::OnMouseMotion(int button, int state, int x, int y){
 	mouseX = x; 			mouseY =  windowHeight - y;
 	mouseState = state;		mouseButton = button;
 	respondMusa(mouseFunction);
 }
-void GLWindow::renderGraphics(void){
+void GLWindow::OnPaint(void){
 	glClear(GL_COLOR_BUFFER_BIT);
 
     activeBoard->showBoard();
 
-    if(activeGame->currentSituation == moveRequested){
+    if(activeGame->currentSituation == moveRequested)
+    {
        activeGame->respondRequestedMove();
     }
-
     activeBoard->highLightSquares();
-
     activeBoard->showAllPieces();
-
     glutPostRedisplay();
     glFlush();
 }
@@ -152,7 +148,6 @@ void GLWindow::respondMusa(int whoCalledMe){
 					}
 				}
 
-
 				if (whoCalledMe == motionFunction && mouseState == GLUT_DOWN){
 					if(mouseWhere == inBoard){
 						activeGame->currentSituation = destinationSelected;
@@ -160,7 +155,6 @@ void GLWindow::respondMusa(int whoCalledMe){
 						activeGame->destinedPieceIndex = activeGame->whoIsAt(activeGame->sourcedPos);
 					}
 				}
-
 				break;
 			case destinationSelected:
 				if (mouseWhere == inBoard){

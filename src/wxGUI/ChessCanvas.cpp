@@ -1,6 +1,5 @@
 #include <GL/glut.h>
 
-
 #include "wxGUI/ChessCanvas.h"
 
 BEGIN_EVENT_TABLE(ChessCanvas,wxGLCanvas)
@@ -27,7 +26,6 @@ void ChessCanvas::Initialize()
 	//LoadAllImages();
 	//ShuffleCards();
 }
-
 
 void ChessCanvas::OnPaint(wxPaintEvent& WXUNUSED(event))
 {
@@ -66,12 +64,10 @@ void ChessCanvas::OnKeyPress(wxKeyEvent& event)
         break;
     default:
         break;
-
     }
     wxPaintEvent Dummy = wxPaintEvent();
     OnPaint(Dummy);
 }
-
 
 void ChessCanvas::DrawTriangle()
 {

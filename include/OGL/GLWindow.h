@@ -22,10 +22,10 @@ public:
     static float windowWidth, windowHeight;
     static int mouseX, mouseY, mouseState, mouseButton, shiftX, shiftY;
     static mouseEventPosition mouseWhere;
-    static void renderGraphics();
-    static void reshapeWindow(int, int);                //int width, int height
-    static void handleMouse(int, int);                  //int x, int y
-    static void handleMouse(int, int, int, int);        //int button, int state, int x, int y
+    static void OnPaint();
+    static void OnReshape(int, int);                //int width, int height
+    static void OnMouseClick(int, int);                  //int x, int y
+    static void OnMouseMotion(int, int, int, int);        //int button, int state, int x, int y
 
     float initx, inity;
     std::string windowTitle;
