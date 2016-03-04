@@ -24,8 +24,8 @@ public:
     static mouseEventPosition mouseWhere;
     static void OnPaint();
     static void OnReshape(int, int);                //int width, int height
-    static void OnMouseClick(int, int);                  //int x, int y
-    static void OnMouseMotion(int, int, int, int);        //int button, int state, int x, int y
+    static void OnMouseMotion(int, int);                  //int x, int y
+    static void OnMouseClick(int, int, int, int);        //int button, int state, int x, int y
 
     float initx, inity;
     std::string windowTitle;
