@@ -15,7 +15,7 @@ myGLwindow::myGLwindow(float sx, float sy, float w, float h, std::string Title){
     this->inity = sy;
     windowHeight = w;
     windowWidth = h;
-    t his->windowTitle = Title;
+    this->windowTitle = Title;
 }
 myGLwindow::myGLwindow(float w, float h, std::string Title){
     myGLwindow(0,0,w,h,Title);

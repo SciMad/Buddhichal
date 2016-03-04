@@ -1,7 +1,7 @@
 #ifndef GAMEGRAPHICS_H_INCLUDED
 #define GAMEGRAPHICS_H_INCLUDED
 
-#include<string>
+#include <string>
 
 #include "Board.h"
 #include "Game.h"
