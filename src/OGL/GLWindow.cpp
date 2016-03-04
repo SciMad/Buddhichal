@@ -66,11 +66,11 @@ void GLWindow::OnReshape(int w, int h){
 	glLoadIdentity();
     gluOrtho2D(0,(GLdouble) w, 0, (GLdouble) h);    //gluOrtho2D(-(GLdouble) w/2,(GLdouble) w/2, -(GLdouble) h/2,(GLdouble) h/2);
 }
-void GLWindow::OnMouseClick(int x, int y){
+void GLWindow::OnMouseMotion(int x, int y){
     mouseX = x; mouseY =  windowHeight - y;
     respondMusa(motionFunction);
 }
-void GLWindow::OnMouseMotion(int button, int state, int x, int y){
+void GLWindow::OnMouseClick(int button, int state, int x, int y){
 	mouseX = x; 			mouseY =  windowHeight - y;
 	mouseState = state;		mouseButton = button;
 	respondMusa(mouseFunction);
