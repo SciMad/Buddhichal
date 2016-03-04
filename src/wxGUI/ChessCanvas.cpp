@@ -2,8 +2,6 @@
 
 const long ChessCanvas::ID_ChessCanvas = wxNewId();
 
-
-
 BEGIN_EVENT_TABLE(ChessCanvas,wxGLCanvas)
     EVT_PAINT(ChessCanvas::OnPaint)
     EVT_KEY_DOWN(ChessCanvas::OnKeyPress)
@@ -138,12 +136,6 @@ void ChessCanvas::TimerFunc(int value)
 {
     glutPostRedisplay();
     //glutTimerFunc(10, TimerFunc, 0);
-}
-
-
-void ChessCanvas::DrawCube()
-{
-	//
 }
 
 GLuint ChessCanvas::LoadImageFile(string FileName)

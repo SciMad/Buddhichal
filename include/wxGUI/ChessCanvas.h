@@ -12,14 +12,6 @@
 using namespace std;
 
 
-
-#define REDBACK    0x34
-#define BLUEBACK   0x35
-#define MENUMODE   0x36
-#define PLAYMODE   0x37
-
-
-
 class ChessCanvas : public wxGLCanvas
 {
 public:
@@ -27,7 +19,6 @@ public:
 
 	void OnPaint       (wxPaintEvent&);
 	void DrawTriangle  ();
-	void DrawCube      ();
 
 
 	void   WhenKeyIsPressed           (unsigned char,int,int);
