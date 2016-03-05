@@ -36,11 +36,9 @@ protected:
 	DECLARE_EVENT_TABLE()
 private:
 	//int WindowWidth=800, WindowHeight=600;
-	GLuint Image[54];
 	bool Flipped, Scrambled;
 	int BackId=1;
 	wxGLContext* MyContext;
-
 
 	static const long ID_ChessCanvas;
 	void OnKeyPress(wxKeyEvent&);

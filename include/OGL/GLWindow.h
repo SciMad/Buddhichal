@@ -40,6 +40,7 @@ public:
     void showWindow();
     void loopWindow();
 
+    void TestTriangle();
     static void respondMusa(int);                       //the argument 'int' indicates which function made the call to respondMusa
     static int xMouse(int), yMouse(int);
 };

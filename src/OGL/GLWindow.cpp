@@ -49,6 +49,26 @@ void GLWindow::showWindow()
     RegisterHandlers();
 };
 
+void GLWindow::TestTriangle()
+{
+    glPushMatrix();
+    //glViewport(0, 0, (GLint)GetSize().x, (GLint)GetSize().y);
+    glShadeModel(GL_SMOOTH);
+    glBegin(GL_TRIANGLES);
+        glColor3ub((GLubyte)255,(GLubyte)0,(GLubyte)0);
+        glVertex3f(0.0f,0.5f,0.0f);
+        // Green on the right bottom corner
+        glColor3ub((GLubyte)0,(GLubyte)255,(GLubyte)0);
+        glVertex3f(0.50f,-0.90f,0.0f);
+        // Blue on the left bottom corner
+        glColor3ub((GLubyte)0,(GLubyte)0,(GLubyte)255);
+        glVertex3f(-0.50f, -0.9000f, -0.0f);
+    glEnd();
+    glColor3ub((GLubyte)255,(GLubyte)255,(GLubyte)255); //reset white color.
+    glPopMatrix();
+
+}
+
 void GLWindow::ShowChess(void)
 {
 	glClear(GL_COLOR_BUFFER_BIT);

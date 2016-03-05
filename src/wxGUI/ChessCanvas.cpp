@@ -41,10 +41,10 @@ void ChessCanvas::OnPaint(wxPaintEvent& WXUNUSED(event))
     glClearColor(0.0f,0.5f,0.4f,0);
     glClear(GL_COLOR_BUFFER_BIT);
 
-    DrawTriangle();
     showWindow();
     ShowChess();
     //Render();
+    TestTriangle();
     glFlush();
     SwapBuffers();
 }
@@ -85,7 +85,7 @@ void ChessCanvas::OnKeyPress(wxKeyEvent& event)
 void ChessCanvas::DrawTriangle()
 {
     glPushMatrix();
-    //glViewport(0, 0, (GLint)GetSize().x, (GLint)GetSize().y);
+    glViewport(0, 0, (GLint)GetSize().x, (GLint)GetSize().y);
     glShadeModel(GL_SMOOTH);
     glBegin(GL_TRIANGLES);
         glColor3ub((GLubyte)255,(GLubyte)0,(GLubyte)0);
