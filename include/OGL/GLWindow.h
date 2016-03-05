@@ -18,8 +18,6 @@ public:
     void RegisterHandlers();
     enum {mouseFunction, motionFunction};
 
-    void RegisterHandlers();
-
     static chessBoard* activeBoard;                         //window ko jati wota instances banaye pani, activeBoard bhaneko eutai hunebho
     static game* activeGame;
 
