@@ -1,5 +1,5 @@
 /***************************************************************
- * Name:      KittyWxMain.h
+ * Name:      ChessWxMain.h
  * Purpose:   Defines Application Frame
  * Author:    Prakash Gautam (pranphy@gmail.com)
  * Created:   2015-05-03
@@ -40,7 +40,7 @@ private:
 	//*)
 
 	//(*Identifiers(MainFrame)
-	static const long ID_KittyPanel;
+	static const long ID_ChessPanel;
 	static const long ID_PlayerNameSText;
 	static const long ID_TEXTCTRL1;
 	static const long ID_STATICTEXT1;
@@ -55,7 +55,7 @@ private:
 	wxMenuItem* MenuItem1;
 	wxStaticText* PlayerNameSText;
 	wxMenu* Menu1;
-	wxPanel* KittyPanel;
+	wxPanel* ChessPanel;
 	wxStaticText* StaticText1;
 	wxPanel* Panel2;
 	wxComboBox* ComboBox1;
@@ -66,12 +66,12 @@ private:
 	wxTextCtrl* TextCtrl2;
 	//*)
     wxFlexGridSizer* FlexGridSizer1;
-    wxStaticBoxSizer* KittySBSizer;
+    wxStaticBoxSizer* ChessSBSizer;
     wxGridBagSizer* OutermostGBSizer;
     wxStaticBoxSizer* StaticBoxSizer1;
 
 
-	ChessCanvas* KittyCanvas;
+	ChessCanvas* ChessObject;
 
 	DECLARE_EVENT_TABLE()
 };

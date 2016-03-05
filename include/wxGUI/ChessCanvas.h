@@ -1,18 +1,16 @@
-#ifndef DISPLAYCANVAS_H
-#define DISPLAYCANVAS_H
+#pragma once
 
-#include <wx/glcanvas.h>
-#include <wx/wx.h>
-#include <wx/msgdlg.h>
-#include <GL/glut.h>
 #include <string>
-#include <sstream>
-#include <vector>
 
-using namespace std;
+#include <wx/wx.h>
+#include <wx/glcanvas.h>
+
+#include <GL/glut.h>
+
+#include "OGL/GLWindow.h"
 
 
-class ChessCanvas : public wxGLCanvas
+class ChessCanvas : public wxGLCanvas, public GLWindow
 {
 public:
 	ChessCanvas(wxWindow*);
@@ -28,7 +26,6 @@ public:
 	void   StartDrawing               ();
 	void   ChangeSize                 (int,int);
 	void   Render                     ();
-	//void   Initialize                 ();
 	void   LoadAllImages              ();
 	void   DisplayCards               ();
 	void   Initialize();
@@ -46,8 +43,6 @@ private:
 
 	static const long ID_ChessCanvas;
 	void OnKeyPress(wxKeyEvent&);
-	GLuint LoadImageFile(string);
+	GLuint LoadImageFile(std::string);
 	void DisplaySinglePhoto(float,float,GLuint);
 };
-
-#endif // DISPLAYCANVAS_H

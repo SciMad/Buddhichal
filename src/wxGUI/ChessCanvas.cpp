@@ -1,3 +1,7 @@
+#include <sstream>
+
+#include <wx/msgdlg.h>
+
 #include "wxGUI/ChessCanvas.h"
 
 const long ChessCanvas::ID_ChessCanvas = wxNewId();
@@ -9,12 +13,14 @@ END_EVENT_TABLE()
 
 
 ChessCanvas::ChessCanvas(wxWindow*Parent):
-    wxGLCanvas(Parent, ID_ChessCanvas,  wxDefaultPosition, wxSize(150,100), 0, wxT("GLCanvas"))
+    wxGLCanvas(Parent, ID_ChessCanvas,  wxDefaultPosition, 
+    wxSize(150,100), 0, wxT("GLCanvas"))
 {
     int argc = 1;
     char* argv[1] = { wxString((wxTheApp->argv)[0]).char_str() };
     glutInit(&argc,argv);
     MyContext = new wxGLContext(this);
+    //Initialize();
 }
 
 void ChessCanvas::Initialize()
@@ -25,16 +31,18 @@ void ChessCanvas::Initialize()
 
 void ChessCanvas::OnPaint(wxPaintEvent& WXUNUSED(event))
 {
-	SetCurrent();
+    SetCurrent();
 	static bool OneTime = false;
 	if(OneTime == false)
 	{
-		LoadAllImages();
-		OneTime = true;
+		//LoadAllImages();
+	    OneTime = true;
 	}
     glClearColor(0.0f,0.5f,0.4f,0);
     glClear(GL_COLOR_BUFFER_BIT);
     DrawTriangle();
+    showWindow();
+    ShowChess();
     //Render();
     glFlush();
     SwapBuffers();
@@ -43,7 +51,6 @@ void ChessCanvas::OnPaint(wxPaintEvent& WXUNUSED(event))
 void ChessCanvas::OnKeyPress(wxKeyEvent& event)
 {
     //wxMessageBox(wxT(" You pressed a key "),wxT("Bravoo "));
-
     int Key = event.GetUnicodeKey();
     if(Key == 13)
     {
@@ -71,8 +78,7 @@ void ChessCanvas::OnKeyPress(wxKeyEvent& event)
 void ChessCanvas::DrawTriangle()
 {
     glPushMatrix();
-
-    glViewport(0, 0, (GLint)GetSize().x, (GLint)GetSize().y);
+    //glViewport(0, 0, (GLint)GetSize().x, (GLint)GetSize().y);
     glShadeModel(GL_SMOOTH);
     glBegin(GL_TRIANGLES);
         glColor3ub((GLubyte)255,(GLubyte)0,(GLubyte)0);
@@ -91,8 +97,7 @@ void ChessCanvas::DrawTriangle()
 
 void ChessCanvas::DisplayCards()
 {
-
-    glViewport(0, 0, (GLint)GetSize().x, (GLint)GetSize().y);
+    //glViewport(0, 0, (GLint)GetSize().x, (GLint)GetSize().y);
 }
 
 void ChessCanvas::LoadAllImages()
@@ -103,17 +108,9 @@ void ChessCanvas::LoadAllImages()
 void ChessCanvas::Render()
 {
 
-    DisplayCards();
-    glPushMatrix();
-    ostringstream Info;
+    std::ostringstream Info;
     Info<<"Press 1 through  9 to select corresponding card ";
     //Cout(const_cast<char*>(Info.str().c_str()),-.8,0,0); //Printing function
-    glPopMatrix();
-
-}
-
-void ChessCanvas::DisplaySinglePhoto(float PositionX, float PositionY, GLuint ImageTexture)
-{
 }
 
 void ChessCanvas::StartDrawing(void)
@@ -138,7 +135,7 @@ void ChessCanvas::TimerFunc(int value)
     //glutTimerFunc(10, TimerFunc, 0);
 }
 
-GLuint ChessCanvas::LoadImageFile(string FileName)
+GLuint ChessCanvas::LoadImageFile(std::string FileName)
 {
 	//wxImage* img = new wxImage(wxString::FromUTF8(FileName.c_str()));
 	wxImage* img = new wxImage(wxString::FromUTF8(FileName.c_str()));
