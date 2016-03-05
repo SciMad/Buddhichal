@@ -23,23 +23,23 @@ void game::start(gameMode mode){
 }
 
 void game::respondRequestedMove(){
-    std::cout<<"current turn of"<<currentTurn<<std::endl;
+    //std::cout<<"current turn of"<<currentTurn<<std::endl;
     if (whatIsThisMove() >= legalMove){
         allGotti->BW[game::whoIsAt(destinedPos)].capture();					//if there is something in the destined square then, make it whiteWalker :d
         allGotti->BW[game::whoIsAt(sourcedPos)].changeTo(destinedPos);
         allGotti->BW[game::whoIsAt(destinedPos)].hasMovedYet = true;
         lastMove = pieceMove(sourcedPos, destinedPos, whatIsThisMove());
-        std::cout<<"Last move was a --> "<<lastMove.thisMove<<std::endl;
+        //std::cout<<"Last move was a --> "<<lastMove.thisMove<<std::endl;
         if (currentTurn == white){
             currentTurn = black;
-            std::cout<<"Now Black's Turn."<<std::endl;
+            //std::cout<<"Now Black's Turn."<<std::endl;
         }else{
-            std::cout<<"Now White's Turn."<<std::endl;
+            //std::cout<<"Now White's Turn."<<std::endl;
             currentTurn = white;
         }
         currentSituation = sourceNotSelected;
     }else{
-        std::cout<<"Illegal Move"<<std::endl;
+        //std::cout<<"Illegal Move"<<std::endl;
         currentSituation = sourceSelected;
     }
 }

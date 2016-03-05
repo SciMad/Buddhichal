@@ -38,7 +38,6 @@ void GLWindow::initWindowGraphics(){
 
 void GLWindow::showWindow()
 {
-    glutCreateWindow("buddhiChal v1.7");                //glutCreateWindow(this->windowTitle);  //Sets the title on the title bar, but this line of code is not working right now.
     glClearColor(0.1, 0.1, 0.2, 0.5);                   //clear the color by black
     glShadeModel(GL_FLAT);                              //
 
@@ -46,14 +45,16 @@ void GLWindow::showWindow()
     activeGame->allGotti->initPieces();
     activeGame->start(vsHuman);
     //allGotti->initPieces();
+    //glutDisplayFunc(OnPaint);
+    RegisterHandlers();
+};
 
-    //Rendering the Pieces will be done in renderGraphics
-    glutDisplayFunc(OnPaint);
+void GLWindow::RegisterHandlers()
+{
     glutReshapeFunc(OnReshape);                     //
     glutMouseFunc(OnMouseClick);                         //glutMouseFunction
 	glutMotionFunc(OnMouseMotion);                        //glutMotionFunction
-
-};
+}
 
 void GLWindow::loopWindow(){
     glutMainLoop();
@@ -94,7 +95,11 @@ void GLWindow::OnPaint(void){
 void GLWindow::respondMusa(int whoCalledMe){
         mouseWhere = outBoard;
 
-		if (mouseX>chessBoard::xMargin+chessBoard::xPadding && mouseX<chessBoard::xMargin+chessBoard::xPadding+8*chessBoard::gap && mouseY>chessBoard::yMargin+chessBoard::yPadding && mouseY<chessBoard::yMargin+chessBoard::yPadding+8*chessBoard::gap){		//Apply this conditions when mouseX and mouseY are within the limit of board x, y
+		if (mouseX>chessBoard::xMargin+chessBoard::xPadding &&
+                mouseX<chessBoard::xMargin+chessBoard::xPadding+8*chessBoard::gap &&
+                mouseY>chessBoard::yMargin+chessBoard::yPadding && 
+                mouseY<chessBoard::yMargin+chessBoard::yPadding+8*chessBoard::gap)
+        {		//Apply this conditions when mouseX and mouseY are within the limit of board x, y
 			activeGame->selectedX = xMouse(mouseX);												//xMouse returns the gridX of the selectedSquare
 			activeGame->selectedY = yMouse(mouseY);												//Idiot, What do you think yMouse will do now?
 			activeGame->selectedPos = pos(activeGame->selectedX,activeGame->selectedY);
@@ -171,7 +176,7 @@ void GLWindow::respondMusa(int whoCalledMe){
                             activeGame->currentSituation = sourceSelected;
 							activeGame->sourcedPos = activeGame->selectedPos;
 							activeGame->sourcedPieceIndex = activeGame->sourcedPos;
-							std::cout<<"Never attack your own!"<<std::endl;
+							//std::cout<<"Never attack your own!"<<std::endl;
 						}
 					}
 				}else{

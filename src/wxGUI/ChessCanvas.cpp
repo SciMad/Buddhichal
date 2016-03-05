@@ -1,3 +1,5 @@
+#include <sstream>
+
 #include "wxGUI/ChessCanvas.h"
 
 const long ChessCanvas::ID_ChessCanvas = wxNewId();
@@ -9,7 +11,8 @@ END_EVENT_TABLE()
 
 
 ChessCanvas::ChessCanvas(wxWindow*Parent):
-    wxGLCanvas(Parent, ID_ChessCanvas,  wxDefaultPosition, wxSize(150,100), 0, wxT("GLCanvas"))
+    wxGLCanvas(Parent, ID_ChessCanvas,  wxDefaultPosition,
+    wxSize(150,100), 0, wxT("GLCanvas"))
 {
     int argc = 1;
     char* argv[1] = { wxString((wxTheApp->argv)[0]).char_str() };
@@ -34,11 +37,18 @@ void ChessCanvas::OnPaint(wxPaintEvent& WXUNUSED(event))
 	}
     glClearColor(0.0f,0.5f,0.4f,0);
     glClear(GL_COLOR_BUFFER_BIT);
-    DrawTriangle();
-    //Render();
+    //DrawTriangle();
+    showWindow();
+    Render();
     glFlush();
     SwapBuffers();
 }
+
+void ChessCanvas::RegisterHandlers()
+{
+    //Overriding the base class function
+}
+
 
 void ChessCanvas::OnKeyPress(wxKeyEvent& event)
 {
@@ -102,15 +112,13 @@ void ChessCanvas::LoadAllImages()
 
 void ChessCanvas::Render()
 {
-
-    DisplayCards();
-    glPushMatrix();
-    ostringstream Info;
-    Info<<"Press 1 through  9 to select corresponding card ";
+    showWindow();
+    OnPaint();
+    //std::ostringstream Info;
+    //Info<<"Press 1 through  9 to select corresponding card ";
     //Cout(const_cast<char*>(Info.str().c_str()),-.8,0,0); //Printing function
-    glPopMatrix();
-
 }
+//void ChessCanvas::RegisterHandlers() { }
 
 void ChessCanvas::DisplaySinglePhoto(float PositionX, float PositionY, GLuint ImageTexture)
 {
@@ -138,7 +146,7 @@ void ChessCanvas::TimerFunc(int value)
     //glutTimerFunc(10, TimerFunc, 0);
 }
 
-GLuint ChessCanvas::LoadImageFile(string FileName)
+GLuint ChessCanvas::LoadImageFile(std::string FileName)
 {
 	//wxImage* img = new wxImage(wxString::FromUTF8(FileName.c_str()));
 	wxImage* img = new wxImage(wxString::FromUTF8(FileName.c_str()));
