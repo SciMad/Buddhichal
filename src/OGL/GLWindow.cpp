@@ -31,16 +31,16 @@ void GLWindow::initWindowGraphics(){
     this->inity = 0;
 
     glutInit(&argc, argv);                              //arguments of the main function, global scope
-    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGBA);       //Display mode.... don't know much, but could be used for back buffering and stuffs
+    //glutInitDisplayMode(GLUT_SINGLE | GLUT_RGBA);       //Display mode.... don't know much, but could be used for back buffering and stuffs
     glutInitWindowPosition(this->initx, this->inity);   //Size of the window
 	glutInitWindowSize(windowWidth, windowHeight);      //Starts the window from ...
 }
 
 void GLWindow::showWindow()
 {
-    glClearColor(0.1, 0.1, 0.2, 0.5);                   //clear the color by black
-    glShadeModel(GL_FLAT);                              //
-
+   //glutCreateWindow("buddhiChal v1.7");                //glutCreateWindow(this->windowTitle);  //Sets the title on the title bar, but this line of code is not working right now.
+    glClearColor(0.2, 0.1, 0.2, 0.5);                   //clear the color by black
+    //glShadeModel(GL_FLAT);                              //
     activeBoard->initBoardVertex();
     activeGame->allGotti->initPieces();
     activeGame->start(vsHuman);
@@ -49,8 +49,25 @@ void GLWindow::showWindow()
     RegisterHandlers();
 };
 
+void GLWindow::ShowChess(void)
+{
+	glClear(GL_COLOR_BUFFER_BIT);
+    activeBoard->showBoard();
+
+    if(activeGame->currentSituation == moveRequested)
+    {
+       activeGame->respondRequestedMove();
+    }
+    activeBoard->highLightSquares();
+    activeBoard->showAllPieces();
+    //glutPostRedisplay();
+    //glFlush();
+}
+
+
 void GLWindow::RegisterHandlers()
 {
+    glutDisplayFunc(ShowChess);
     glutReshapeFunc(OnReshape);                     //
     glutMouseFunc(OnMouseClick);                         //glutMouseFunction
 	glutMotionFunc(OnMouseMotion);                        //glutMotionFunction
@@ -76,21 +93,6 @@ void GLWindow::OnMouseClick(int button, int state, int x, int y){
 	mouseState = state;		mouseButton = button;
 	respondMusa(mouseFunction);
 }
-void GLWindow::OnRender(void){
-	glClear(GL_COLOR_BUFFER_BIT);
-
-    activeBoard->showBoard();
-
-    if(activeGame->currentSituation == moveRequested)
-    {
-       activeGame->respondRequestedMove();
-    }
-    activeBoard->highLightSquares();
-    activeBoard->showAllPieces();
-    //glutPostRedisplay();
-    //glFlush();
-}
-
 
 void GLWindow::respondMusa(int whoCalledMe){
         mouseWhere = outBoard;

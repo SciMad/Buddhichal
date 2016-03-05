@@ -2,6 +2,8 @@
 
 #include<string>
 
+#include <GL/glut.h>
+
 #include "Base/Board.h"
 #include "Base/Game.h"
 #include "Base/Gotti.h"
@@ -13,6 +15,7 @@ class GLWindow{
     char** argv;
 
 public:
+    void RegisterHandlers();
     enum {mouseFunction, motionFunction};
 
     void RegisterHandlers();
@@ -23,7 +26,8 @@ public:
     static float windowWidth, windowHeight;
     static int mouseX, mouseY, mouseState, mouseButton, shiftX, shiftY;
     static mouseEventPosition mouseWhere;
-    void OnRender();
+
+    static void ShowChess(void);
     static void OnReshape(int, int);                //int width, int height
     static void OnMouseMotion(int, int);                  //int x, int y
     static void OnMouseClick(int, int, int, int);        //int button, int state, int x, int y

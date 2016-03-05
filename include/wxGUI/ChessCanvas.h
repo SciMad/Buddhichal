@@ -1,12 +1,15 @@
 #pragma once
 
-#include <wx/glcanvas.h>
-#include <wx/wx.h>
-#include <wx/msgdlg.h>
-#include <GL/glut.h>
 #include <string>
 
+#include <wx/wx.h>
+#include <wx/glcanvas.h>
+
+#include <GL/glut.h>
+
+
 #include "OGL/GLWindow.h"
+
 
 class ChessCanvas : public wxGLCanvas, public GLWindow
 {
@@ -24,7 +27,6 @@ public:
 	void   StartDrawing               ();
 	void   ChangeSize                 (int,int);
 	void   Render                     ();
-	//void   Initialize                 ();
 	void   LoadAllImages              ();
 	void   DisplayCards               ();
 	void   Initialize();

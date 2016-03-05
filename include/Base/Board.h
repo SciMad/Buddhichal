@@ -1,5 +1,4 @@
-#ifndef GAMEBOARD_H_INCLUDED
-#define GAMEBOARD_H_INCLUDED
+#pragma once
 
 #include <GL/gl.h>
 #include <GL/glu.h>
@@ -10,17 +9,20 @@
 #include "Base/Elements.h"
 #include "Base/Gotti.h"
 
-const float boardColor[5][4] = {  {0.4,0.4,0.3, 0.3},
-                            //{0.4, 0.4, 0.3, 0.5},
-                            /*{0.0, 0.1, 0.2, 0.6},*/	//Black Square
-                            //{0.4,0.1,0.0, 0.3},
-                            {0.8, 0.8, 0.7, 0.5},	//White Square
-                            //{0.7,0.5,0.4, 0.3},
-                            {0.5, 0.6, 0.7, 0.6},	//Border Color
-                            {0.0, 0.0, 0.0, 0.5},	//Dividing lines
-                            {0.4, 0.1, 0.3, 0.5}		//Highlighting the selected
-                        };
-class chessBoard{
+const float boardColor[5][4] = {  
+    {0.4,0.4,0.3, 0.3},
+    //{0.4, 0.4, 0.3, 0.5},
+    /*{0.0, 0.1, 0.2, 0.6},*/	//Black Square
+    //{0.4,0.1,0.0, 0.3},
+    {0.8, 0.8, 0.7, 0.5},	//White Square
+    //{0.7,0.5,0.4, 0.3},
+    {0.5, 0.6, 0.7, 0.6},	//Border Color
+    {0.0, 0.0, 0.0, 0.5},	//Dividing lines
+    {0.4, 0.1, 0.3, 0.5}		//Highlighting the selected
+};
+
+
+class chessBoard {
 public:
     chessBoard();
     chessBoard(float gap);
@@ -39,5 +41,3 @@ public:
 protected:
     static void show1Piece(piece, float, float);
 };
-
-#endif // GAMEBOARD_H_INCLUDED
