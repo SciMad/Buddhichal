@@ -23,7 +23,7 @@ public:
     static float windowWidth, windowHeight;
     static int mouseX, mouseY, mouseState, mouseButton, shiftX, shiftY;
     static mouseEventPosition mouseWhere;
-    void OnPaint();
+    void OnRender();
     static void OnReshape(int, int);                //int width, int height
     static void OnMouseMotion(int, int);                  //int x, int y
     static void OnMouseClick(int, int, int, int);        //int button, int state, int x, int y

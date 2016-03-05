@@ -113,7 +113,7 @@ void ChessCanvas::LoadAllImages()
 void ChessCanvas::Render()
 {
     showWindow();
-    OnPaint();
+    OnRender();
     //std::ostringstream Info;
     //Info<<"Press 1 through  9 to select corresponding card ";
     //Cout(const_cast<char*>(Info.str().c_str()),-.8,0,0); //Printing function

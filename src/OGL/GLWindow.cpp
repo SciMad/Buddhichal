@@ -45,7 +45,7 @@ void GLWindow::showWindow()
     activeGame->allGotti->initPieces();
     activeGame->start(vsHuman);
     //allGotti->initPieces();
-    //glutDisplayFunc(OnPaint);
+    //glutDisplayFunc(OnRender);
     RegisterHandlers();
 };
 
@@ -76,7 +76,7 @@ void GLWindow::OnMouseClick(int button, int state, int x, int y){
 	mouseState = state;		mouseButton = button;
 	respondMusa(mouseFunction);
 }
-void GLWindow::OnPaint(void){
+void GLWindow::OnRender(void){
 	glClear(GL_COLOR_BUFFER_BIT);
 
     activeBoard->showBoard();
@@ -87,8 +87,8 @@ void GLWindow::OnPaint(void){
     }
     activeBoard->highLightSquares();
     activeBoard->showAllPieces();
-    glutPostRedisplay();
-    glFlush();
+    //glutPostRedisplay();
+    //glFlush();
 }
 
 
@@ -189,7 +189,7 @@ void GLWindow::respondMusa(int whoCalledMe){
 				break;
 			}
 		}	// mouseButton == GLUT_LEFT_BUTTON
-        glutPostRedisplay();
+        //glutPostRedisplay();
 }
 int GLWindow::xMouse(int mX){
 	//For 1 based system i.e. first square taken to be 1,1
