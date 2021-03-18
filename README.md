@@ -1,6 +1,5 @@
-BuddhiChal
+BuddhiChal (A Chess Game)
 ==========
-> A game
 
 Instruction to build the game
 
